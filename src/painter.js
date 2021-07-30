@@ -7,7 +7,7 @@ export default class Painter {
   PEN_TOOL_SELECTOR = ".draw .tool.pen";
   CANVAS_SELECTOR = ".draw .core canvas:last-child";
 
-  color = "#000000";
+  color = "#FFFFFF";
   isLoading = false;
   stopRequested = false;
 
@@ -118,6 +118,10 @@ export default class Painter {
         // const a = data[i+3].toString(16).padStart(2,"0");
 
         const newColor = `#${r}${g}${b}`;
+
+        if (newColor == "#FFFFFF") {
+          continue;
+        }
 
         if (this.color !== newColor) {
           this.setColor(newColor);
